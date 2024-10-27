@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "View Grades";
+}
+
+<h1>@ViewData["Title"]</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr>
+                <td>@grade.Subject.SubjectName</td>
+                <td>@grade.Score</td>
+            </tr>
+        }
+    </tbody>
+</table>

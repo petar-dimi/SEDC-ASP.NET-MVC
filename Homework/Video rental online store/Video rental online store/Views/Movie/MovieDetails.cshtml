@@ -1,0 +1,20 @@
+﻿namespace Video_rental_online_store.Views.Movie
+{
+    @model Movie
+
+<h2>@Model.Title (@Model.Genre)</h2>
+<p>@Model.Language, Released on: @Model.ReleaseDate.ToShortDateString()</p>
+<p>Length: @Model.Length.Hours hr @Model.Length.Minutes min</p>
+<p>Age Restriction: @Model.AgeRestriction+</p>
+
+@if (Model.Quantity > 0)
+{
+    <form asp-action="RentMovie" method="post">
+        <input type="hidden" name="movieId" value="@Model.Id" />
+        <button type="submit">Rent</button>
+    </form>
+}
+else
+{
+    <span>Currently unavailable</span>
+}

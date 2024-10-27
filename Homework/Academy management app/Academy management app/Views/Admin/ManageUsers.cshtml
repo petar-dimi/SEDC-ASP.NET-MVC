@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<h1>@ViewData["Title"]</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>@user.Role</td>
+            </tr>
+        }
+    </tbody>
+</table>

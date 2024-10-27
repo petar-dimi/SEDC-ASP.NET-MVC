@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "View Students";
+}
+
+<h1>@ViewData["Title"]</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Student Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

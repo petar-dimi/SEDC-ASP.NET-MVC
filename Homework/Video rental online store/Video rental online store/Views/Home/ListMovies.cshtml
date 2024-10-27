@@ -1,0 +1,16 @@
+﻿namespace Video_rental_online_store.Views.Movie
+@model IEnumerable<Movie>
+
+<h2>Available Movies</h2>
+@foreach (var movie in Model)
+{
+    <div>
+        <h3>@movie.Title (@movie.Genre)</h3>
+        <p>@movie.Language, Released on: @movie.ReleaseDate.ToShortDateString()</p>
+        @if (movie.IsAvailable)
+        {
+            @Html.ActionLink("Rent", "RentMovie", new { movieId = movie.Id })
+        }
+    </div>
+}
+
